@@ -1,12 +1,13 @@
-import { Controller, Get, Ip } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { RealIP } from 'nestjs-real-ip';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
-  async getHello(@Ip() ip: string): Promise<string> {
+  async getHello(@RealIP() ip: string): Promise<string> {
     return ip;
   }
 }
