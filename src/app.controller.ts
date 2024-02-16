@@ -10,6 +10,6 @@ export class AppController {
     console.log('IP', req.ip)
     console.log('connection', req.connection.remoteAddress)
     console.log('headers', headers.host)
-    return `${ip} ${req.connection.remoteAddress}`;
+    return `${ip} ${headers.host}`;
   }
 }
